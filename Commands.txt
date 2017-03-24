@@ -1,0 +1,7 @@
+git add FILENAME     add this file to next commit
+git add .*           do add to all files in my folder
+git add proposal.*   add everything that starts with proposal
+
+git commit -m "Message"  this is the next whole batch of things i want to add, with a note "message"
+
+git push 
