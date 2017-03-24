@@ -1,0 +1,9 @@
+Proposal:
+-Preprocessing data
+-ideas
+
+Slideshow:
+EDA Kernel: https://www.kaggle.com/philschmidt/quora-question-pairs/quora-interactive-eda
+
+
+Project:
