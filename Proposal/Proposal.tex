@@ -28,7 +28,7 @@ One issue with the data is the subjectivity of the target variable. For example,
 The test data is about 2,000,000 question pairs and the competitors are asked to submit a probability of being duplicate, and the submissions are scored on Logarithimic Loss.
 
 \section{Possible Approaches}\label{approaches}
-----3.1 by Ethan and Luis-----
+----3.1 by Ethan and Luis-----\\
 Kaggle provides a discussion board, and rewards competitors for providing helpful guides and comments to other commenters. In particular, there is a "beginner's guide" by "shubh24" which provides many techniques in natural language processing.
 \begin{itemize}
 \item One first idea is to take every sentence, create a set of every $k$ strings of words, after stripping the stopwords, and compare the overlap by some metric. For $k=1$ we would measure how distinct the words are in each question, $k=2$ would be word-pairs, and so forth. One key issue is that a single word, even if the rest of the sentence is identical, can drastically change the question, as in the lithium vs. silicon example above.
@@ -39,18 +39,19 @@ Kaggle provides a discussion board, and rewards competitors for providing helpfu
 A much longer \LaTeXe{} example was written by Gil~\cite{Gil:02}.
 
 
----part 3.2 on word embedding and subsequent methods by Joa&Yingnan----
-3.2 Neural Network approach
+---word embedding and subsequent methods begins here by Joa and Yingnan----\\
+
+3.2 Neural Network approach \\
 Among previous methods on neural network, the first step is usually transferring the words in a question into vectors using word embedding method. Word embedding is a general method used for similar algorithms that embeds words into a vector space with several hundred of dimensions. These vectors captures semantics and analogies of different words. In other words, the similarity between the words' definitions are denoted by the distance in vector the space. Currently, there are trained models including Google’s WordVec, Stanford University’s GloVe, Gensim and Deeplearning4j.  Principal Component Analysis (PCA) and T-Distributed Stochastic Neighbour Embedding (t-SNE) are both used to reduce the dimensionality of word vector spaces and visualize word embeddings and clusters.
 
 To judge whether two sentences (vector sets) are duplicates belongs to natural language sentence matching (NLSM) problem. For NLSM problem, there are two types of deep learning frameworks. One is based on the \textbf{“Siamese”}, the other is based on \textbf{“matching-aggregation”}. For Siamese framework, two sentences are encoded into two vectors individually and the matching decision is based on these two vectors. This method has smaller model and easier to train, but hasn’t included the interaction between two sentences. For “matching-aggregation” framework, the two sentences are matched at the beginning, including word-by-word and/or phrase-by-sentence, and then the results are aggregated into vectors. This method has included the interactions between two sentences, but usually requires relatively larger model.
 
-The first algorithm "Siamese"\cite{http://www.erogol.com/duplicate-question-detection-deep-learning/} is consist of two weight-sharing convolutional neural networks (CNNs). Each takes one input and projects it into lower-dimensions based on the CNN, where similar items are contracted and dissimilar ones are dispersed over the learned space. And there is a final layer to solve the sentence paring problem. The model is small and easy to train, and adaptive to various purposes. However, the algorithm does not incorporate interactions between sentences, and hence the “matching-aggregation” is developed.
+The first algorithm "Siamese"\cite{erogel's blog} is consist of two weight-sharing convolutional neural networks (CNNs). Each takes one input and projects it into lower-dimensions based on the CNN, where similar items are contracted and dissimilar ones are dispersed over the learned space. And there is a final layer to solve the sentence paring problem. The model is small and easy to train, and adaptive to various purposes. However, the algorithm does not incorporate interactions between sentences, and hence the “matching-aggregation” is developed.
 
-For “matching-aggregation” framework, another possible approaching method is described in Wang, Z ’s paper published recently. \cite{Wang, Z. et al. Bilateral Multi-Perspective Matching for Natural Language Sentences. arXiv. 2017} Basically, they have introduced a bilateral multi-perspective matching (BiMPM) method with 5 levels. Word Representation is used to convert words to vectors. Context Representation Layer is used to encode contextual information. Matching Layer is used to compare the similarity of the two sentences. Here one time-step of one sentence is compared against all time-step of the other sentence. \textbf{Aggregation Layer} is used to convert matching vectors into fix-length vectors. \textbf{Prediction Layer} is used to evaluate the conditional probability. 
+For “matching-aggregation” framework, another possible approaching method is described in Wang, Z ’s paper published recently.\cite{Z. Wang et al. Bilateral Multi-Perspective Matching for Natural Language Sentences. arXiv. 2017} Basically, they have introduced a bilateral multi-perspective matching (BiMPM) method with 5 levels. Word Representation is used to convert words to vectors. Context Representation Layer is used to encode contextual information. Matching Layer is used to compare the similarity of the two sentences. Here one time-step of one sentence is compared against all time-step of the other sentence. \textbf{"Aggregation Layer"} is used to convert matching vectors into fix-length vectors. \textbf{"Prediction Layer"} is used to evaluate the conditional probability. 
 
 \bibliographystyle{abbrv}
-\bibliography{main}
+%\bibliography{main}
 
 \end{document}
 This is never printed
