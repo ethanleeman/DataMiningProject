@@ -1,9 +1,16 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{1}
 
-\bibitem{Gil:02}
-J.~Y. Gil.
-\newblock {\LaTeXe} for graduate students.
-\newblock manuscript, Haifa, Israel, 2002.
+\bibitem{Wang}
+Z.~Wang et~al.
+\newblock Bilateral multi-perspective matching for natural language sentences.
 
+\bibitem{erogel}
+Eren Golge.
+\newblock Duplicate question detection with deep learning on quora dataset,
+  2017.
+
+\bibitem{shubh}
+Shubh24.
+\newblock Kaggle kernel: A beginner's guide, 2017.
 
 \end{thebibliography}
