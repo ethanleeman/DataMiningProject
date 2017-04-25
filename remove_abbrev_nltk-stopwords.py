@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 This data cleaning program expands abbreviation and convert all "," to "."
-It also removes stop words.
+It also removes stop words and duplicated words.
 
 """
 
@@ -24,7 +24,7 @@ from nltk.corpus import stopwords
 
 #remove all punctuation
 punctuation='[)("\'?&]'
-
+#put in entries in abbriviation dictionary
 abbr_dict={
 
     "what's":"what is",
@@ -126,7 +126,7 @@ def process_data(data):
 print "Importing data..."
 df = pd.read_csv("../input/train.csv").fillna("")
 
-#Number of all question pairs
+#count the number of all question pairs
 maxlen=len(df)
 
 # Expand abbreviations
