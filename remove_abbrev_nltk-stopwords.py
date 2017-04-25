@@ -143,7 +143,7 @@ def unique_list(l):
     
 
 #Put the words that you don't want to delete below
-useful_words = [u'what',u'why',u'who',u'whom',u'how',u'when',u'when',u'not',u'which',u'no']
+useful_words = [u'what',u'why',u'who',u'whom',u'how',u'when',u'where',u'not',u'which',u'no']
 #stop words are those in stopwords.words('english') minus useful_words
 stop_words = [x for x in stopwords.words('english') if x not in useful_words]
 
