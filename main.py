@@ -7,17 +7,17 @@ import featureEng
 
 ##### Section A             ####
 ##### Takes a bit of time...####
-dftrain = pd.DataFrame.from_csv('../Data/RawData/train.csv')
-dftest = pd.DataFrame.from_csv('../Data/RawData/test.csv')
+#dftrain = pd.DataFrame.from_csv('../Data/RawData/train.csv')
+#dftest = pd.DataFrame.from_csv('../Data/RawData/test.csv')
 
-preprocess.preproc(dftrain)
-preprocess.preproc(dftest)
+#preprocess.preproc(dftrain)
+#preprocess.preproc(dftest)
 
 
 ##### Section B, comment Section A out              ####
 ##### After you do A once, just load it again       ####
-#dftrain = pd.DataFrame.from_csv('../Data/ProcessedData/train.csv')
-#dftest = pd.DataFrame.from_csv('../Data/ProcessedData/test.csv')
+dftrain = pd.DataFrame.from_csv('../Data/ProcessedData/train.csv')
+dftest = pd.DataFrame.from_csv('../Data/ProcessedData/test.csv')
 
 
 featureEng.makeFeatures(dftrain)
